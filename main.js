@@ -1,6 +1,6 @@
 const root = document.getElementById('root');
 const form = document.getElementById('searchBox');
-const url = "http://127.0.0.1:8080"
+const url = "http://localhost:3000/music"
 
 //event listener for search button 
 form.addEventListener("search", (e) => {
