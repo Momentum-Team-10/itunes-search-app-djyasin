@@ -3,19 +3,19 @@ const form = document.getElementById("searchBox");
 //const url = "http://127.0.0.1:8080";
 const searchResults = document.getElementById("searchResults");
 const button = document.getElementById("search");
-const itunesProxy = "https://proxy-itunes-api.glitch.me";
+const itunesProxy = "https://proxy-itunes-api.glitch.me/?term=";
 
 //event listener for search button
 form.addEventListener("search", (e) => {
-    console.log(document.getElementById('searchbox text').value)
-  const inputField = document.getElementById("inputField").value;
+   console.log(document.getElementById("searchbox text").value);
+const inputField = document.getElementById("inputField").value;
   e.preventDefault();
   searchBox(inputField);
-  form.reset();
-});
+   form.reset();
+ });
 
-function searchDisplay(data) {
-  fetch(itunesProxy + "/search?term=")
+function search(data) {
+  fetch("https://proxy-itunes-api.glitch.me/search?term=")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
