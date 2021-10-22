@@ -44,5 +44,5 @@ searchResults.innerHTML = `
 <audio controls src='${song.previewUrl}'></audio>
 `;
 }
-      }
+}
 }) }

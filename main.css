@@ -3,16 +3,20 @@
   margin: 0;
 }
 body {
- 
   justify-content: center;
-  background-color: aquamarine;
-  color: navy;
+  background-color: #429ea6;
+  color: #153B5O;
   font-family: Oswald, sans-serif;
 }
 
 #searchResults {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin: 0;  
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 0;
+  background-color: #ecebe4;
+  max-width: 350px;
+  max-height: 300px;
+  margin: 50px;
+  border-radius: 15px;
 }
