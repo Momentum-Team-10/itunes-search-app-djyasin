@@ -4,18 +4,27 @@ const form = document.getElementById("searchBox");
 const searchResults = document.getElementById("searchResults");
 const button = document.getElementById("search");
 const itunesProxy = "https://proxy-itunes-api.glitch.me/?term=";
+const inputField = document.getElementById("inputField");
 
 //event listener for search button
-form.addEventListener("search", (e) => {
-   console.log(document.getElementById("searchbox text").value);
-const inputField = document.getElementById("inputField").value;
-  e.preventDefault();
-  searchBox(inputField);
-   form.reset();
- });
+// form.addEventListener("search", (e) => {
+//    console.log(document.getElementById("searchBox").value);
+// const inputField = document.getElementById("inputField").value;
+//   e.preventDefault();
+//   searchBox(inputField);
+//   console.log (inputField)
+//    form.reset();
+//  });
 
-function search(data) {
-  fetch("https://proxy-itunes-api.glitch.me/search?term=")
+document.getElementById('search').addEventListener('click', (e) => {
+  e.preventDefault()
+  console.log(inputField.value)
+  searchBox(inputField)
+  form.reset()
+})
+
+function searchBox() {
+  fetch("https://proxy-itunes-api.glitch.me/search?term=" + inputField.value)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
