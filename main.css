@@ -6,8 +6,6 @@
 header {
   font-family: Oswald, sans-serif;
   font-size: 30px;
-  margin: 5px;
- 
 }
 
 body {
@@ -25,7 +23,7 @@ body {
   margin: 0;
   background-color: #ecebe4;
   max-width: 350px;
-  max-height: 300px;
+  max-height: 400px;
   margin: 50px;
   border-radius: 15px;
   font-family: Oswald, sans-serif;
@@ -41,11 +39,12 @@ color: #153B5O;
 font-family: Oswald, sans-serif;
 background-color: #16F4D0;
 font-size: 20px;
+border-color: #153B50;
 }
 
 
 //why is this not working?
-#search-button:hover {
+button:hover {
   background-color: blue;
 }
 
