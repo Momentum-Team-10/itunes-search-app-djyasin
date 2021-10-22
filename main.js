@@ -28,21 +28,21 @@ function searchBox() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      for (let i = 0; i < data.results.length; i++) {
-        renderSongCard(data);
-      }
-    });
-}
-
-//render the search info to a card
-//html for when the search function is called
-function renderSongCard(li, songInfo) {
+      const songs = data.results
+      if (songs <= 0) {
+          alert('Returned zero results')
+      } else {                
+          for (let song of songs) {
+let artistCard = document.createElement('div')
+artistCard.className = 'artist-card'
+searchResults.appendChild(artistCard) 
 searchResults.innerHTML = `
-<p>${artistName.title}</p>
-<img src=${artworkUrl100.image} />
-<p>${collectionName.description}</p>
-<p>${trackName.description}</p>
-<audio controls>
-<source src=${previewUrl.trackPreview} type="audio/mpeg">Play</audio>
+<img src='${song.artworkUrl100}'></img>
+<h1>${song.artistName}</h1>
+<p><strong> Album:  </strong>${song.collectionName}</p>
+<p><strong>Track: </strong>${song.trackName}</p>
+<audio controls src='${song.previewUrl}'></audio>
 `;
 }
+      }
+}) }
